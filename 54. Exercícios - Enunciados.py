@@ -39,7 +39,7 @@ else:
             print('Nome inválido.')
         else:
             if len(nome) <= 4:
-                print('Seu nome é pequeno!')
+                print('Seu nome é curto!')
             else:
                 print('Seu nome é normal.')
 finally:
