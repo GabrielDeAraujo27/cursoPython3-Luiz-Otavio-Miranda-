@@ -55,7 +55,7 @@ O segundo dígito do CPF é 0
 novoCPF.append(primeiroDigitoCPF)
 
 #multiplica cada número
-b = len(novoCPF)+1
+b = len(novoCPF)+2
 novoCPFp = copy.copy(novoCPF)
 for c in range(0, len(novoCPF)):
     novoCPFp[c] = novoCPF[c] * b
