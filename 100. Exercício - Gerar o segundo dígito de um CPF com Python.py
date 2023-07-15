@@ -25,7 +25,7 @@ print(opCPF)
 # define o primeiro digito
 novoDigitoCPF = 0 if opCPF > 9 else opCPF
 print(novoDigitoCPF)
-
+novoCPF.append(novoDigitoCPF)
 ###############################################
 """
 Calculo do segundo dígito do CPF
@@ -53,7 +53,7 @@ contrário disso:
 
 O segundo dígito do CPF é 0
 """
-novoCPF.append(novoDigitoCPF)
+
 CPFCriado.append(novoDigitoCPF)
 
 # multiplica cada número
@@ -73,4 +73,6 @@ print(opCPF)
 
 # define o primeiro digito
 novoDigitoCPF = 0 if opCPF > 9 else opCPF
+CPFCriado.append(novoDigitoCPF)
 print(novoDigitoCPF)
+print(CPFCriado)
