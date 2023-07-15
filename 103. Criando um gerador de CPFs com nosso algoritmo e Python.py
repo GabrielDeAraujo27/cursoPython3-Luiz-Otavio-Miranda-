@@ -1,29 +1,29 @@
 import random
 
 CPF = []
-for a in range (0,9):
+for primeiroNumero in range (0, 9):
    CPF.append(random.randint(0,9))
-b = 10
-a = 0
+multiplicador = 10
+primeiroNumero = 0
 for c in CPF:
-    a += c * b
-    b -= 1
-a *= 10
-a %= 11
-a = 0 if a>9 else a
-CPF.append(a)
+    primeiroNumero += c * multiplicador
+    multiplicador -= 1
+primeiroNumero *= 10
+primeiroNumero %= 11
+primeiroNumero = 0 if primeiroNumero > 9 else primeiroNumero
+CPF.append(primeiroNumero)
 
-b = 11
-aa = 0
+multiplicador = 11
+segundoNumero = 0
 for c in CPF:
-    aa += c * b
-    b -= 1
-aa *= 10
-aa %= 11
-aa = 0 if aa>9 else aa
+    segundoNumero += c * multiplicador
+    multiplicador -= 1
+segundoNumero *= 10
+segundoNumero %= 11
+segundoNumero = 0 if segundoNumero > 9 else segundoNumero
 
-CPF.append(aa)
-print(a, aa)
+CPF.append(segundoNumero)
+#print(primeiroNumero, segundoNumero)
 
 for c in CPF:
     print(c, end='')
