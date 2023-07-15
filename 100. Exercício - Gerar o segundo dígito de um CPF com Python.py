@@ -1,16 +1,15 @@
 import copy
 
 CPF = '746.824.890'
-CPFCriado = []
 novoCPF = []
-# transforma em int
+#transforma em int
 for c in CPF:
     if c.isnumeric():
         novoCPF.append(int(c))
 print(novoCPF)
 
-# multiplica cada número
-b = len(novoCPF) + 1
+#multiplica cada número
+b = len(novoCPF)+1
 novoCPFp = copy.copy(novoCPF)
 for c in range(0, len(novoCPF)):
     novoCPFp[c] = novoCPF[c] * b
@@ -18,14 +17,14 @@ for c in range(0, len(novoCPF)):
     b -= 1
 print('\n', novoCPFp, sep='')
 
-# soma todos os números + multiplica por 10 + resto por 11
+#soma todos os números + multiplica por 10 + resto por 11
 opCPF = (sum(novoCPFp) * 10) % 11
 print(opCPF)
 
-# define o primeiro digito
-novoDigitoCPF = 0 if opCPF > 9 else opCPF
-print(novoDigitoCPF)
-novoCPF.append(novoDigitoCPF)
+#define o primeiro digito
+primeiroDigitoCPF = 0 if opCPF>9 else opCPF
+print(primeiroDigitoCPF)
+
 ###############################################
 """
 Calculo do segundo dígito do CPF
@@ -53,26 +52,21 @@ contrário disso:
 
 O segundo dígito do CPF é 0
 """
+novoCPF.append(primeiroDigitoCPF)
 
-CPFCriado.append(novoDigitoCPF)
-
-# multiplica cada número
-b = len(novoCPF) + 1
+#multiplica cada número
+b = len(novoCPF)+1
 novoCPFp = copy.copy(novoCPF)
 for c in range(0, len(novoCPF)):
     novoCPFp[c] = novoCPF[c] * b
     print(b, end='.')
     b -= 1
+print('\n', novoCPFp, sep='')
 
-print('\n', novoCPF, sep='')
-print(novoCPFp, sep='')
-
-# soma todos os números + multiplica por 10 + resto por 11
+#soma todos os números + multiplica por 10 + resto por 11
 opCPF = (sum(novoCPFp) * 10) % 11
 print(opCPF)
 
-# define o primeiro digito
-novoDigitoCPF = 0 if opCPF > 9 else opCPF
-CPFCriado.append(novoDigitoCPF)
-print(novoDigitoCPF)
-print(CPFCriado)
+#define o primeiro digito
+primeiroDigitoCPF = 0 if opCPF>9 else opCPF
+print(primeiroDigitoCPF)
