@@ -1,5 +1,5 @@
-def verificadorDeResposta (nome, numQuestao, questao):
-    print(questao["Pergunta"])
+def verificadorDeResposta (questao):
+    print(f'{questao["Pergunta"]}')
     for b in questao["Alternativas"]:
         print(b)
     resposta = str(input(f'Qual a sua resposta? '))
@@ -27,9 +27,9 @@ perguntas = [
     }
 ]
 print('Bem vindo ao Quiz!')
-nome = 'Gabriel'#input('Qual é o seu nome? ')
+nome = input('Qual é o seu nome? ')
 print(f'Certo, {nome}, vamos começar.')
 score = 0
 for c in range(0, 3):
-    score += verificadorDeResposta(nome, c, perguntas[c])
+    score += verificadorDeResposta(perguntas[c])
     print(f'{nome}: {score}')
