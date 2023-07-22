@@ -10,6 +10,9 @@ def alteraPreco(listaProdutos):
 def ordenaNome(listaProdutos):
     ordemAlterada = sorted(listaProdutos, key=lambda listaProdutos: listaProdutos['nome'], reverse=True)
     return ordemAlterada
+def ordenaPreco(listaProdutos):
+    ordemAlterada = sorted(listaProdutos, key=lambda listaProdutos: listaProdutos['preco'])
+    return ordemAlterada
 
 
 produtos = [
@@ -21,10 +24,14 @@ produtos = [
 ]
 novosProdutos = alteraPreco(produtos)
 descrescenteProdutos = ordenaNome(produtos)
+ordemPrecoProdutos = ordenaPreco(produtos)
 
 print('Produtos com juros')
 for c in novosProdutos:
     print(c)
 print('\nProdutos com nome em ordem decrescente')
 for c in descrescenteProdutos:
+    print(c)
+print('\nProdutos com preço em ordem crescente')
+for c in ordemPrecoProdutos:
     print(c)
