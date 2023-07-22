@@ -6,14 +6,14 @@ def multiplica(x, y):
     return x * y
 
 
-def criar_funcao(funcao, x):
-    def funcInterna(y):
+def executa(funcao, x):
+    def funcaoInterna(y):
         return funcao(x, y)
-    return funcInterna
+    return funcaoInterna
 
 
-soma_com_cinco = criar_funcao(soma, 5)
-multiplica_por_dez = criar_funcao(multiplica, 10)
+somaCom5 = executa(soma, 5)
+multiplicaPor10 = executa(multiplica, 10)
 
-print(soma_com_cinco(5))
-print(multiplica_por_dez(10))
+print(somaCom5(5))
+print(multiplicaPor10(10))
