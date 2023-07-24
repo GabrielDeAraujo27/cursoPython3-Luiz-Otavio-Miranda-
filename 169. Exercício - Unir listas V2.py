@@ -1,5 +1,6 @@
 listaDeCidades = ('Salvador', 'Ubatuba', 'Belo Horizonte', 'Rio de Janeiro', 'Goiania')
-listaDeEstados = ('BA', 'SP', 'MG', 'RJ')
+listaDeEstados = ('BA', 'SP', 'MG', 'RJ', 'GO', 'SP')
 cidadeEstado = zip(listaDeCidades, listaDeEstados)
 
-print(tuple(cidadeEstado))
+for c in cidadeEstado:
+    print(c)
