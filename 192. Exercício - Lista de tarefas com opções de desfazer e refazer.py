@@ -1,7 +1,8 @@
 def direcionaEscolha(e):
     if e == 1:
+        global novoItem
         novoItem = adiciona()
-        return novoItem
+        return listaTarefas.append(novoItem), novoItem
     elif e == 2:
         desfaz()
     elif e == 3:
@@ -9,17 +10,21 @@ def direcionaEscolha(e):
     else:
         for c in listaTarefas:
             print(c)
-def adiciona(e):
+def adiciona():
     novoItem = str(input('Adicione uma tarefa: '))
-    if novoItem is in listaTarefas:
+    if novoItem in listaTarefas:
         novoItem += ' novamente.'
-
     return novoItem
+def desfaz():
+    indiceItemApagado = listaTarefas.index(novoItem)
+    return listaTarefas.remove(novoItem)
 
 
-listaTarefas = ['']
+listaTarefas = []
+novoItem = 0
 
-escolha = input('(1)Adicionar tarefa      (2)Desfazer      (3)refazer      (4)Mostrar'
-                '\nInsira: ')
+while True:
+    escolha = int(input('(1)Adicionar tarefa      (2)Desfazer      (3)refazer      (4)Mostrar'
+                    '\nInsira: '))
 
-direcionaEscolha(e)
+    direcionaEscolha(escolha)
