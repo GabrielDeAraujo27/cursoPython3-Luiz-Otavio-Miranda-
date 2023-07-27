@@ -38,6 +38,7 @@ listaTarefas = []
 novoItem = int
 apagouItem = False
 
+
 while True:
     escolha = PerguntaEscolha()
     if escolha == 9:
