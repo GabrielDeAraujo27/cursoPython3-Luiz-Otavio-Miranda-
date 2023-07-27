@@ -1,6 +1,10 @@
+def PerguntaEscolha():
+    escolha = int(input('(1)Adicionar tarefa      (2)Desfazer      (3)refazer      (4)Mostrar (9)Encerra\nInsira: '))
+    return escolha
 def direcionaEscolha(e):
+    global novoItem
+    global apagouItem
     if e == 1:
-        global novoItem
         novoItem = adiciona()
         return listaTarefas.append(novoItem), novoItem
     elif e == 2:
@@ -16,15 +20,28 @@ def adiciona():
         novoItem += ' novamente.'
     return novoItem
 def desfaz():
-    indiceItemApagado = listaTarefas.index(novoItem)
-    return listaTarefas.remove(novoItem)
+    global apagouItem
+    if novoItem != 0:
+        apagouItem = True
+        return listaTarefas.remove(novoItem)
+def refaz():
+    global apagouItem
+    if apagouItem == True:
+        apagouItem = False
+        return listaTarefas.append(novoItem)
+    else:
+        print('Não há item para apagar.')
 
 
 listaTarefas = []
-novoItem = 0
+novoItem = int
+apagouItem = False
 
 while True:
-    escolha = int(input('(1)Adicionar tarefa      (2)Desfazer      (3)refazer      (4)Mostrar'
-                    '\nInsira: '))
-
+    escolha = PerguntaEscolha()
+    if escolha == 9:
+        break
     direcionaEscolha(escolha)
+print('Esta é sua lista final\n')
+for c in listaTarefas:
+    print(c)
