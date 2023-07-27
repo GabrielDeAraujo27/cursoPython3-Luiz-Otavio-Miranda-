@@ -1,5 +1,5 @@
 def PerguntaEscolha():
-    escolha = int(input('(1)Adicionar tarefa      (2)Desfazer      (3)refazer      (4)Mostrar (9)Encerra\nInsira: '))
+    escolha = int(input('\n\n(1)Adicionar tarefa      (2)Desfazer      (3)refazer      (4)Mostrar (9)Encerra\nInsira: '))
     return escolha
 def direcionaEscolha(e):
     global novoItem
@@ -14,6 +14,7 @@ def direcionaEscolha(e):
     else:
         for c in listaTarefas:
             print(c)
+        input()
 def adiciona():
     novoItem = str(input('Adicione uma tarefa: '))
     if novoItem in listaTarefas:
@@ -42,6 +43,6 @@ while True:
     if escolha == 9:
         break
     direcionaEscolha(escolha)
-print('Esta é sua lista final\n')
+print('\nEsta é sua lista final')
 for c in listaTarefas:
     print(c)
