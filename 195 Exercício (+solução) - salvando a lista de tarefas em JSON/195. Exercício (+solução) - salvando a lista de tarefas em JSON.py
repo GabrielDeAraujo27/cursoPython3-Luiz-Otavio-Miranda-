@@ -8,7 +8,7 @@ except (json.decoder.JSONDecodeError, FileNotFoundError):
     dadosAnteriores = ''
 
 
-listaTarefas = ['Terminar esse modulo', 'dormir', 'comecar o proximo modulo']
+listaTarefas = []
 for c in dadosAnteriores:
     listaTarefas.append(c)
 novoItem = int
