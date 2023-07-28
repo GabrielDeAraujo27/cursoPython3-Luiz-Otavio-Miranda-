@@ -22,8 +22,9 @@ while True:
     direcionaEscolha(escolha, listaTarefas)
 
 print('\nAlteração completa')
-#for c in listaTarefas:
- #   print(c)
+print('\n Lista completa')
+for c in listaTarefas:
+    print(c)
 
 with open("Lista_de_Tarefas.json", "w", encoding="UTF-8") as arquivo:
     json.dump(listaTarefas, arquivo, indent=4)
