@@ -11,3 +11,5 @@ aula_305_diretorio_zip
 aula186_compactado.zip
 *.json
 *.iml
+*.pyc
+*.txt
