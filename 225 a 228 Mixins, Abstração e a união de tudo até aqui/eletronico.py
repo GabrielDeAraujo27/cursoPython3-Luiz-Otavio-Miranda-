@@ -1,12 +1,17 @@
 from logy import logPrintMixin
+from abc import ABC, ABCMeta, abstractmethod
 
-class eletronico:
+class eletronico(ABC):
     def __init__(self, nome):
         self.nome = nome
         self._ligado = False
+
+    @abstractmethod
     def ligar(self):
         if not self._ligado:
             self._ligado = True
+
+    @abstractmethod
     def desligar(self):
         if self._ligado:
             self._ligado = False
