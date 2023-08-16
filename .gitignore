@@ -1,4 +1,4 @@
-
+﻿
 535435.py
 113. Exercícios com funções.py~
 .vs/ProjectSettings.json
@@ -13,3 +13,6 @@ aula186_compactado.zip
 *.iml
 *.pyc
 *.txt
+.idea
+*.xml
+.idea/workspace.xml
