@@ -19,10 +19,7 @@ class cliente(pessoa):
         self.nomeCompleto = pes.nomeCompleto
         self.idade = pes.idade
         self.sexo = pes.sexo
-        self.MeuBanco = ContaParticular.NomeDaInstituicao
-        self.TipoDeConta = ContaParticular.TipoDeConta
-        self.NumeroDaConta = ContaParticular.NumeroDaConta
-        self.Saldo = ContaParticular.saldo
+        self.MConta = ContaParticular
 
 class conta(ABC):
     @abstractmethod
@@ -30,20 +27,56 @@ class conta(ABC):
         self.NomeDoTitular = Titular.nome
         self.NumeroDaConta = random.randint(10000, 99999)
         self.saldo = 0
+    @abstractmethod
+    def Saque(self):
+        while True:
+            valorSaque = float(input('Quanto você quer sacar? '))
+            if valorSaque <= 0:
+                break
+            elif (self.saldo - valorSaque) < 0:
+                print('Transação invalida')
+            else:
+                self.saldo -= valorSaque
+    def Deposito(self):
+        while True:
+            valorDeposito = float(input('Quanto você quer depositar? '))
+            if valorDeposito <= 0:
+                break
+            else:
+                self.saldo += valorDeposito
+                break
+
 class contaCorrente(conta):
     def __init__(self, Titular=pessoa, Instituicao=banco):
         self.NomeDoTitular = Titular.nomeCompleto
         self.TipoDeConta = 'Corrente'
-        self.NumeroDaConta = random.randint(10000, 99999)
+        self.NumeroDaConta = 10#random.randint(10000, 99999)
         self.NomeDaInstituicao = Instituicao.NomeDaInstituicao
-        self.saldo = 0
+        self.saldo = 1000
+    def Saque(self):
+        while True:
+            valorSaque = float(input('Quanto você quer sacar? '))
+            if valorSaque <= 0:
+                break
+            elif (self.saldo - valorSaque) < -500:
+                print('Transação invalida')
+            else:
+                self.saldo -= valorSaque
+                break
+
 class contaPoupanca(conta):
     def __init__(self, Titular=pessoa, Instituicao=banco):
         self.NomeDoTitular = Titular.nome
         self.TipoDeConta = 'Poupanca'
-        self.NumeroDaConta = random.randint(10000, 99999)
+        self.NumeroDaConta = 10#random.randint(10000, 99999)
         self.NomeDaInstituicao = Instituicao.NomeDaInstituicao
         self.saldo = 0
-
-#Bradesco = banco('Bradesco')
-
+    def Saque(self):
+        while True:
+            valorSaque = float(input('Quanto você quer sacar? '))
+            if valorSaque <= 0:
+                break
+            elif (self.saldo - valorSaque) < 0:
+                print('Transação invalida')
+            else:
+                self.saldo -= valorSaque

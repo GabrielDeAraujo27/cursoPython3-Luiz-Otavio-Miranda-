@@ -1,14 +1,18 @@
-from Classes import pessoa, cliente, conta, contaCorrente, contaPoupanca, banco
+from Classes import pessoa, cliente, contaCorrente, contaPoupanca, banco
+from funcs import consulta, criaConta
+
+
 
 Bradesco = banco('Bradesco')
 
-pessoa1 = pessoa(nomeCompleto='Gabriel')#pessoa(nomeCompleto=input('Digite seu nome: '))
-pessoa1.cadastraPessoa(pessoa)
-print(pessoa1.__dict__)
-meuBanco = Bradesco
-minhaConta = contaCorrente(pessoa1, meuBanco)
-cliente1 = cliente(minhaConta, pessoa1)
+escolha = 1#int(input('(1)Criar conta'))
 
-#Criar uma forma de consultar os dados
-#Criar def de saque e deposito
+if escolha == 1:
+    cliente1 = criaConta()
+
+#consulta(cliente1)
+cliente1.MConta.Saque()
+cliente1.MConta.Deposito()
+consulta(cliente1)
+
 #Criar função que armazena contas
