@@ -11,9 +11,13 @@ class pessoa:
         self.idade = idade
         self.sexo = sexo
     def cadastraPessoa(self, nome):
-        self.nomeCompleto: nome
-        self.idade = 18#int(input('Digite sua idade: '))
-        self.sexo = 'Masculino'#str(input('Qual o seu sexo: '))
+        try:
+            self.nomeCompleto: nome
+            self.idade = int(input('Digite sua idade: '))
+            self.sexo = str(input('Qual o seu sexo: '))
+        except ValueError:
+            print('Valor inválido')
+            quit()
 class cliente(pessoa):
     def __init__(self, ContaParticular, pes=pessoa):
         self.nomeCompleto = pes.nomeCompleto
@@ -54,29 +58,22 @@ class contaCorrente(conta):
         self.NomeDaInstituicao = Instituicao.NomeDaInstituicao
         self.saldo = 1000
     def Saque(self):
-        while True:
-            valorSaque = float(input('Quanto você quer sacar? '))
-            if valorSaque <= 0:
-                break
-            elif (self.saldo - valorSaque) < -500:
-                print('Transação invalida')
-            else:
-                self.saldo -= valorSaque
-                break
+        valorSaque = float(input('Quanto você quer sacar? '))
+        if (self.saldo - valorSaque) < -500:
+            print('Transação invalida')
+        else:
+            self.saldo -= valorSaque
 
 class contaPoupanca(conta):
     def __init__(self, Titular=pessoa, Instituicao=banco):
-        self.NomeDoTitular = Titular.nome
+        self.NomeDoTitular = Titular.nomeCompleto
         self.TipoDeConta = 'Poupanca'
         self.NumeroDaConta = 10#random.randint(10000, 99999)
         self.NomeDaInstituicao = Instituicao.NomeDaInstituicao
         self.saldo = 0
     def Saque(self):
-        while True:
-            valorSaque = float(input('Quanto você quer sacar? '))
-            if valorSaque <= 0:
-                break
-            elif (self.saldo - valorSaque) < 0:
-                print('Transação invalida')
-            else:
-                self.saldo -= valorSaque
+        valorSaque = float(input('Quanto você quer sacar? '))
+        if (self.saldo - valorSaque) < 0:
+            print('Transação invalida')
+        else:
+            self.saldo -= valorSaque
