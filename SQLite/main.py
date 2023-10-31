@@ -8,7 +8,7 @@ DB_FILE = ROOT_DIR / DB_NAME
 connection = sqlite3.connect(DB_FILE)
 cursor = connection.cursor()
 
-# SQL
+#SQL
 
 cursor.close()
-connection.close()
+connection.close
