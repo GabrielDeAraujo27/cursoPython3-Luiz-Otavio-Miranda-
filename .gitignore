@@ -12,7 +12,6 @@ aula186_compactado.zip
 *.json
 *.iml
 *.pyc
-*.txt
 .idea
 *.xml
 .idea/workspace.xml
